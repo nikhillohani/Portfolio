@@ -1,0 +1,891 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    cursor: none;
+    background: #ffffff;
+}
+
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: none;
+}
+
+
+
+/* Custom Cursor */
+.cursor {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #000000;
+    border-radius: 70%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #000000, #000000);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    animation: float 3s ease-in-out infinite;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #7d00ff, rgb(0 255 181));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(126, 200, 227, 0.3);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+/* Hero Section with Animated Background */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(-45deg, #1a1a1a, #222222, #0d0d0d);
+    background-size: 400% 400%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: bgAnimation 8s infinite ease-in-out;
+}
+
+/* Background Animation */
+@keyframes bgAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Animated Light Glow Behind Name */
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 60vw;
+    height: 60vh;
+    background: radial-gradient(circle, rgba(125, 0, 255, 0.5), transparent);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: glowAnimation 6s infinite alternate ease-in-out;
+    z-index: 0;
+}
+
+/* Glow Animation */
+@keyframes glowAnimation {
+    0% { filter: blur(30px) opacity(0.5); }
+    100% { filter: blur(80px) opacity(0.8); }
+}
+
+/* Ensure Text is Above Background */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    animation: float 3s ease-in-out infinite;
+}
+/* Hero Section with Fire, Falling Stars & Electricity */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, rgba(20, 10, 5, 0.8), #0d0d0d);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glow Effect for "Nikhil Lohani" */
+.hero h1 {
+    font-size: 4.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+    position: relative;
+    text-shadow: 0px 0px 20px rgba(255, 94, 0, 0.8),
+                 0px 0px 40px rgba(255, 94, 0, 0.6),
+                 0px 0px 60px rgba(255, 94, 0, 0.4);
+    animation: glowEffect 1.5s infinite alternate;
+}
+
+/* Soft Pulsing Glow */
+@keyframes glowEffect {
+    0% { text-shadow: 0px 0px 10px rgba(255, 94, 0, 0.7), 0px 0px 30px rgba(255, 94, 0, 0.5); }
+    100% { text-shadow: 0px 0px 20px rgba(255, 94, 0, 0.9), 0px 0px 50px rgba(255, 94, 0, 0.6); }
+}
+
+/* Fire Sparks */
+.sparks {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.spark {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 94, 0, 0.9);
+    box-shadow: 0 0 10px rgba(255, 94, 0, 0.8);
+    border-radius: 50%;
+    opacity: 0;
+    animation: sparkFly 3s infinite;
+}
+
+/* Spark Movement */
+@keyframes sparkFly {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-200px) scale(0); opacity: 0; }
+}
+
+/* Falling Stars */
+.falling-stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.falling-star {
+    position: absolute;
+    width: 3px;
+    height: 30px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    opacity: 0;
+    transform: rotate(-45deg);
+    animation: fallingStar 3s linear infinite;
+}
+
+/* Falling Star Movement */
+@keyframes fallingStar {
+    0% { transform: translate(100vw, -100vh) rotate(-45deg); opacity: 1; }
+    100% { transform: translate(-10vw, 100vh) rotate(-45deg); opacity: 0; }
+}
+
+/* Electric Sparks */
+.electric-sparks {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.electric-spark {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(0, 255, 255, 0.8);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+    border-radius: 50%;
+    opacity: 0;
+    animation: electricBlink 1s infinite alternate;
+}
+
+/* Random Flickering Electric Sparks */
+@keyframes electricBlink {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.5); }
+}
+
+/* Hero Section with Fire-Like Sparks */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, rgba(20, 10, 5, 0.8), #0d0d0d);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Glow Effect for "Nikhil Lohani" */
+.hero h1 {
+    font-size: 4.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+    position: relative;
+    text-shadow: 0px 0px 20px rgba(255, 94, 0, 0.8),
+                 0px 0px 40px rgba(255, 94, 0, 0.6),
+                 0px 0px 60px rgba(255, 94, 0, 0.4);
+    animation: glowEffect 1.5s infinite alternate;
+}
+
+/* Soft Pulsing Glow */
+@keyframes glowEffect {
+    0% { text-shadow: 0px 0px 10px rgba(255, 94, 0, 0.7), 0px 0px 30px rgba(255, 94, 0, 0.5); }
+    100% { text-shadow: 0px 0px 20px rgba(255, 94, 0, 0.9), 0px 0px 50px rgba(255, 94, 0, 0.6); }
+}
+
+/* Spark Container */
+.sparks {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Fire-Like Sparks */
+.spark {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 94, 0, 0.9);
+    box-shadow: 0 0 10px rgba(255, 94, 0, 0.8);
+    border-radius: 50%;
+    opacity: 0;
+    animation: sparkFly 3s infinite;
+}
+
+/* Spark Movement Animation */
+@keyframes sparkFly {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-200px) scale(0);
+        opacity: 0;
+    }
+}
+
+.featured-title {
+    color: #000000; /* Change to your desired color */
+}
+
+/* Hero Section Animation */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #000000, #222222);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+/* Text Animation for Nikhil Lohani */
+.hero h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(45deg, #ffffff, rgb(255 255 255));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glitchText 1.5s infinite alternate;
+}
+
+/* Keyframes for Glitch Effect */
+@keyframes glitchText {
+    0% { text-shadow: 3px 3px 10px rgba(0, 255, 181, 0.7); }
+    50% { text-shadow: -3px -3px 10px rgba(125, 0, 255, 0.7); }
+    100% { text-shadow: 2px -2px 10px rgba(0, 255, 181, 0.7); }
+}
+
+/* Hero Section Floating Effect */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Subtle Background Animation */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Smooth Floating Animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Download CV Button */
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    margin-top: 2rem;
+    background: linear-gradient(45deg, #7d00ff, #00afff);
+    color: #fff;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+/* Profile Picture */
+.profile-container {
+    position: relative;
+    margin-top: -150px;
+    margin-bottom: 3rem;
+    z-index: 2;
+}
+
+.profile-picture {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #7ec8e3;
+    box-shadow: 0 0 30px rgba(126, 200, 227, 0.3);
+    animation: floatProfile 3s ease-in-out infinite;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Experience Section */
+.experience {
+    padding: 8rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #ab4ec8, #2127bc);
+    position: relative;
+}
+
+.experience::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1400&q=80') center/cover;
+    opacity: 0.05;
+}
+
+h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.works h2 {
+    margin-top: 90px; /* Adjust this value as needed */
+}
+
+.timeline {
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: #ffffff;
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 4rem;
+    opacity: 0;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.date {
+    width: 150px;
+    padding: 1rem;
+    font-weight: bold;
+    text-align: right;
+    color: #ffffff;
+}
+
+.content {
+    flex: 1;
+    padding: 2rem;
+    margin: 0 2rem;
+    background: rgba(0, 12, 102, 0.5);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.1);
+    border: 1px solid rgba(126, 200, 227, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 6rem 2rem;
+    background: #1b1b1b;
+}
+
+.testimonials-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial-item {
+    background: #000000;
+    padding: 2rem;
+    border-radius: 29px;
+    box-shadow: 5px -7px 2px 0px #ffc900;
+    border: 1px solid #ffc90096;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.testimonial-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.5s cubic-bezier(0, 0, 0, 0.5);
+}
+
+.testimonial-content {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.author-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.author-info h4 {
+    color: #7ec8e3;
+    margin-bottom: 0.2rem;
+}
+
+.author-info p {
+    font-size: 0.9rem;
+}
+
+/* Works Section */
+.image-container {
+    width: 100%; /* Make container responsive */
+    max-width: 1400px; /* Set maximum width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Centers the container */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    background-color: #fff; /* White background */
+    overflow: hidden; /* Ensures no image exceeds the container */
+}
+
+.image-container img {
+    width: 100%; /* Makes image responsive */
+    height: auto; /* Maintains the aspect ratio of the image */
+    border-radius: 10px; /* Rounded corners for the image */
+    object-fit: cover; /* Ensures image covers the container without stretching */
+}
+
+/* Video Works Section */
+.video-works {
+    padding: 5rem 2rem;
+    background: #ffc900;
+}
+
+.video-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Video Item - Container for the Video */
+.video-item {
+    aspect-ratio: 9/16; /* Maintains a 16:9 aspect ratio for the container */
+    background: rgba(5, 10, 48, 0.5);
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 0, 255, 0.2);
+    opacity: 0;
+    border: 1px solid rgba(126, 200, 227, 0.1);
+    position: relative; /* To position the video within the container */
+}
+
+/* Video Placeholder - Positioning for the video */
+.video-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center; /* Vertically center the video */
+    justify-content: center; /* Horizontally center the video */
+}
+
+/* Video Element - Fitting video inside the frame */
+.video-placeholder video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video fills the container while maintaining the aspect ratio */
+    border-radius: 15px; /* Ensures the video has the same rounded corners */
+}
+
+/* Landscape Video Section */
+.landscape-video-works {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f9f9f9; /* Optional, for a clean background */
+}
+
+.landscape-video-works h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333; /* Dark text for better readability */
+}
+
+.landscape-video-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+/* Laptop Mockup */
+.laptop-mockup {
+    position: relative;
+    width: 100%;
+    max-width: 1280px; /* Laptop max width */
+    aspect-ratio: 16 / 9; /* Maintain 1280x720 aspect ratio */
+    background-color: #333; /* Laptop frame color */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Video Placeholder */
+.video-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Video Player */
+.video-placeholder video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* Mockup Screen Indicator (Top Bezel) */
+.laptop-mockup::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 8px;
+    background-color: #ccc; /* Mockup screen indicator */
+    border-radius: 8px;
+}
+
+/* CTA Button */
+.cta-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+.cta-button:focus {
+    outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1366px) {
+    .laptop-mockup {
+        max-width: 1024px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .laptop-mockup {
+        max-width: 850px;
+    }
+
+    .cta-button {
+        font-size: 1em;
+        padding: 10px 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .laptop-mockup {
+        max-width: 90%; /* Adjust width for tablets */
+    }
+
+    .landscape-video-works h2 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .laptop-mockup {
+        max-width: 100%; /* Full width on mobile */
+    }
+
+    .cta-button {
+        font-size: 0.9em;
+        padding: 8px 20px;
+    }
+
+    .landscape-video-works h2 {
+        font-size: 1.5em;
+    }
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+.cta-button:focus {
+    outline: none;
+}
+
+.button {
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 20px;
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, #000000, #000000);
+    color: #fff;
+    border-radius: 50px;
+    margin: 0 auto;
+    display: table;
+    transition: all 0.3s;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact Section */
+.contact {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #000000, #000000);
+    color: #fff;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.social-icon {
+    color: #ffc900;
+    transition: all 0.3s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    color: #ffffff;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes floatProfile {
+    0%, 100% {
+        transform: translateY(0) rotate(0);
+    }
+    50% {
+        transform: translateY(-15px) rotate(3deg);
+    }
+}
+
+@keyframes wave {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .timeline::before {
+        left: 0;
+    }
+
+    .timeline-item {
+        flex-direction: column !important;
+    }
+
+    .date {
+        text-align: left;
+        width: auto;
+    }
+
+    .content {
+        margin: 1rem 0 0 2rem;
+    }
+
+    .works-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
