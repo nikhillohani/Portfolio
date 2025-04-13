@@ -1,8 +1,51 @@
-// Custom Cursor
-document.addEventListener('mousemove', (e) => {
-    const cursor = document.querySelector('.cursor');
-    cursor.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`;
+const dot = document.querySelector(".cursor-dot");
+const outline = document.querySelector(".cursor-outline");
+
+let mouseX = 0, mouseY = 0;
+let outlineX = 0, outlineY = 0;
+
+document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    dot.style.transform = `translate(${mouseX - 4}px, ${mouseY - 4}px)`;
+
+    createTrail(mouseX, mouseY); // spark trail on move
 });
+
+function animate() {
+    outlineX += (mouseX - outlineX) * 0.2;
+    outlineY += (mouseY - outlineY) * 0.2;
+    outline.style.transform = `translate(${outlineX - 17}px, ${outlineY - 17}px)`;
+    requestAnimationFrame(animate);
+}
+animate();
+
+// Hover effect
+const hoverTargets = document.querySelectorAll("a, button, .hover-target");
+hoverTargets.forEach(el => {
+    el.addEventListener("mouseenter", () => {
+        document.body.classList.add("cursor-hover");
+    });
+    el.addEventListener("mouseleave", () => {
+        document.body.classList.remove("cursor-hover");
+    });
+});
+
+// 💫 Spark Trail Function
+function createTrail(x, y) {
+    const trail = document.createElement("div");
+    trail.classList.add("cursor-trail");
+    document.body.appendChild(trail);
+    trail.style.left = x + "px";
+    trail.style.top = y + "px";
+
+    setTimeout(() => {
+        trail.remove();
+    }, 500);
+}
+
+
 
 // Intersection Observer for animations
 const observerOptions = {
@@ -101,25 +144,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     setInterval(createSpark, 250);
 
-    // Falling Stars
-    const starContainer = document.createElement("div");
-    starContainer.classList.add("falling-stars");
-    document.querySelector(".hero").appendChild(starContainer);
-
-    function createFallingStar() {
-        const star = document.createElement("div");
-        star.classList.add("falling-star");
-        star.style.left = Math.random() * 100 + "vw";
-        star.style.top = "-10vh";
-        star.style.animationDuration = (Math.random() * 3 + 1) + "s";
-        starContainer.appendChild(star);
-
-        setTimeout(() => {
-            star.remove();
-        }, 3000);
-    }
-
-    setInterval(createFallingStar, 1500);
+    
 
     // Electric Sparks
     const electricContainer = document.createElement("div");
