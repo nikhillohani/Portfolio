@@ -5,29 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nikhil Lohani - Graphic Designer</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Custom Cursor -->
-   <!-- <div class="cursor"></div>  -->
-
-<div class="cursor-dot"></div>
-<div class="cursor-outline"></div>
-<div class="cursor-trail"></div>
-
+    <div class="cursor"></div>
 
     <!-- Hero Section -->
     <section class="hero">
-  <div class="hero-content fade-in">
-    <h1>Nikhil Lohani</h1>
-    <p>Creative Graphic Designer Crafting Impactful Visual Experiences</p>
-    
-    <!-- Updated CTA Button with Link -->
-    <a href="https://nikhillohani.github.io/Resume/" target="_blank" class="cta border-animation">
-      <span>Dive Into My Resume</span>
-    </a>
-  </div>
-</section>
+        <div class="hero-content fade-in">
+            <h1>Nikhil Lohani</h1>
+            <p>Creative Graphic Designer</p>
+            <a href="https://nikhillohani.github.io/Resume/" target="_blank" class="cta-button">Dive Into My Resume</a>
+        </div>
+    </section>
 
     <!-- Profile Picture -->
     <div class="profile-container">
@@ -35,306 +25,35 @@
             <img src="src/dp.jpg" alt="Profile">
         </div>
     </div>
-
     <!-- Experience Section -->
-
-
-<style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      
-
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 4rem 2rem;
-      }
-
-      header {
-        text-align: center;
-        margin-bottom: 6rem;
-      }
-
-      h1 {
-        font-size: 4.5rem;
-        font-weight: 800;
-        margin-bottom: 1rem;
-        line-height: 1.1;
-        position: relative;
-        display: inline-block;
-        background: linear-gradient(to right, #005cff, #9e3dff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: #0000000f;
-      }
-
-       
-
-      .subtitle {
-        color: #000;
-        font-size: 1.5rem;
-        font-weight: 500;
-        margin-top: 0.1rem;
-      }
-
-      .timeline {
-        position: relative;
-        max-width: 1000px;
-        margin: 0 auto;
-      }
-
-      .timeline-item {
-        margin-bottom: 8rem;
-        position: relative;
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .timeline-item:last-child {
-        margin-bottom: 0;
-      }
-
-      .timeline-content {
-    background: linear-gradient(11deg, #000000, #8d3af1, #0058ff);
-    background-size: 400% 400%;
-    animation: gradientFlow 8s ease infinite;
-    padding: 3rem;
-    border-radius: 1rem;
-    position: relative;
-    border: 3px solid rgba(34, 34, 34, 0.0); /* 0.3 = 30% opacity */
-    transition: all 0.3s ease;
-}
-
-/* Animation keyframes */
-@keyframes gradientFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-      .timeline-content:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(255, 51, 102, 0.1);
-        border-color: #000000;
-      }
-
-      .timeline-dot {
-        position: absolute;
-        width: 4rem;
-        height: 4rem;
-        background: #000000;
-        border-radius: 50%;
-        top: -2rem;
-        left: 3rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    <section class="experience">
+    <h2>Experience</h2>
+    <div class="timeline">
+        <!-- Experience Item 1 -->
+        <div class="timeline-item">
+            <div class="content">
+                <h3>Specialist, Creative Design - C3 at VDX.TV</h3>
+                <p><strong>Location:</strong> Hybrid</p>
+                <p class="description">
+                    As a Specialist in Creative Design, I lead diverse design projects, collaborating with teams to deliver innovative, user-centered solutions. My role spans branding, digital design, and user experience, where I drive impactful results for the business.
+                </p>
+            </div>
+            <div class="date">2020 to 2023</div>
+        </div>
         
-      }
-
-      .timeline-dot svg {
-        width: 2rem;
-        height: 2rem;
-        fill: none;
-        stroke: white;
-        stroke-width: 2;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-      }
-
-      .timeline-title {
-        font-size: 2rem;
-        font-weight: bold;
-        color: #fff;
-        margin: 1.5rem 0 0.5rem;
-      }
-
-      .timeline-company {
-        color: #00ff30;
-        font-weight: 600;
-        font-size: 1.1rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-
-      .timeline-date {
-        color: #3aff00;
-        margin: 0.5rem 0 1.5rem;
-        font-size: 0.95rem;
-        font-weight: 500;
-      }
-
-      .timeline-description {
-        color: #fff;
-        line-height: 1.8;
-        font-size: 1.1rem;
-      }
-
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .timeline-item {
-        opacity: 0;
-        animation: fadeInUp 0.6s ease forwards;
-      }
-
-      .timeline-item:nth-child(1) { animation-delay: 0.2s; }
-      .timeline-item:nth-child(2) { animation-delay: 0.4s; }
-      .timeline-item:nth-child(3) { animation-delay: 0.6s; }
-      .timeline-item:nth-child(4) { animation-delay: 0.8s; }
-
-      @media (min-width: 768px) {
-        .timeline-item {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .timeline-item:nth-child(even) .timeline-content {
-          grid-column: 2;
-        }
-
-        .timeline-item:nth-child(even) .timeline-dot {
-          left: -2rem;
-        }
-
-        .timeline-item:nth-child(odd) .timeline-dot {
-          left: auto;
-          right: -2rem;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .container {
-          padding: 2rem 1.5rem;
-        }
-
-        h1 {
-          font-size: 3rem;
-        }
-
-        .subtitle {
-          font-size: 1.25rem;
-        }
-
-        .timeline-content {
-          padding: 2rem;
-        }
-
-        .timeline-title {
-          font-size: 1.75rem;
-        }
-
-        .timeline-description {
-          font-size: 1rem;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <header>
-        <h1>Creative Journey</h1>
-        <p class="subtitle">Graphic Designer & Visual Artist</p>
-      </header>
-
-      <div class="timeline">
-        <!-- Current Position -->
+        <!-- Experience Item 2 -->
         <div class="timeline-item">
-          <div class="timeline-content">
-            <div class="timeline-dot">
-              <svg viewBox="0 0 24 24">
-                <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
-                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
-                <path d="M2 2l7.586 7.586"></path>
-                <circle cx="11" cy="11" r="2"></circle>
-              </svg>
+            <div class="content">
+                <h3>Specialist, Creative Design - C2 at VDX.TV</h3>
+                <p><strong>Location:</strong> On-site</p>
+                <p class="description">
+                    With over 4 years of experience in graphic design, I specialize in crafting eye-catching visual solutions for advertising campaigns. My expertise includes designing compelling ads, digital content, and branding materials that drive engagement and strengthen brand presence. I work closely with marketing teams to develop creative strategies that connect with audiences and achieve impactful results.
+                </p>
             </div>
-            <h3 class="timeline-title">Senior Graphic Designer</h3>
-            <p class="timeline-company">VDX.TV</p>
-            <p class="timeline-date">2025 - Present</p>
-            <p class="timeline-description">
-              As a Specialist in Creative Design, I lead diverse design projects, collaborating with teams to deliver innovative, user-centered solutions. My role spans branding, digital design, and user experience, where I drive impactful results for the business.
-            </p>
-          </div>
+            <div class="date">2023 to 2025</div>
         </div>
-
-        <!-- Previous Position -->
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <div class="timeline-dot">
-              <svg viewBox="0 0 24 24">
-                <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
-                <path d="M9 9h6"></path>
-                <path d="M9 13h6"></path>
-                <path d="M9 17h6"></path>
-              </svg>
-            </div>
-            <h3 class="timeline-title">Specialist, Creative Design - C2</h3>
-            <p class="timeline-company">Exponential</p>
-            <p class="timeline-date">2020 - 2023</p>
-            <p class="timeline-description">
-              With over 4 years of experience in graphic design, I specialize in crafting eye-catching visual solutions for advertising campaigns. My expertise includes designing compelling ads, digital content, and branding materials that drive engagement and strengthen brand presence. I work closely with marketing teams to develop creative strategies that connect with audiences and achieve impactful results.
-            </p>
-          </div>
-        </div>
-
-        <!-- Achievement -->
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <div class="timeline-dot">
-              <svg viewBox="0 0 24 24">
-                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5h3.5a2.5 2.5 0 0 1 2.5 2.5V19a2.5 2.5 0 0 1-2.5 2.5h-3.5a2.5 2.5 0 0 1 0-5H6"></path>
-                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5h-3.5a2.5 2.5 0 0 0-2.5 2.5V19a2.5 2.5 0 0 0 2.5 2.5h3.5a2.5 2.5 0 0 0 0-5H18"></path>
-              </svg>
-            </div>
-            <h3 class="timeline-title">B612</h3>
-            <p class="timeline-company">Ad Content Creator</p>
-            <p class="timeline-date">2019</p>
-            <p class="timeline-description">
-              Collaborated with B612 to create visually engaging ad content, enhancing brand presence across digital platforms. Designed high-quality graphics and video assets tailored for social media and marketing campaigns. Applied expertise in Adobe Creative Suite to develop compelling visuals that aligned with B612's creative direction and audience engagement strategies.
-            </p>
-          </div>
-        </div>
-
-        <!-- First Position -->
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <div class="timeline-dot">
-              <svg viewBox="0 0 24 24">
-                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-              </svg>
-            </div>
-            <h3 class="timeline-title">Youtuber</h3>
-            <p class="timeline-company">NL EDITS & GyaaniHub</p>
-            <p class="timeline-date">2016 - 2018</p>
-            <p class="timeline-description">
-              I used to create videos on image editing, such as tutorials on retouching photos. Additionally, on my YouTube channel ‘GyaaniHub,’ I uploaded short videos featuring interesting facts and knowledge.
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
-  </body>
-    
+</section>
 
     <!-- Testimonials Section -->
     <section class="testimonials">
@@ -402,7 +121,7 @@
 
    <!-- Video Works Section -->
 <section class="video-works">
-    <h2 style="color: black !important;">Video Works</h2>
+    <h2>Video Works</h2>
     <div class="video-grid">
         <div class="video-item fade-up">
             <div class="video-placeholder">
@@ -420,7 +139,7 @@
             </div>
         </div>
     </div>
-   <!-- <a href="https://drive.google.com/drive/folders/1vKy4x7BiQZb2VS8zYku7uTL_tPVIyqxi?usp=sharing" class="button" target="_blank">See More Videos</a> --> <!-- Button moved outside .video-grid -->
+    <a href="https://drive.google.com/drive/folders/1vKy4x7BiQZb2VS8zYku7uTL_tPVIyqxi?usp=sharing" class="button" target="_blank">See More Videos</a> <!-- Button moved outside .video-grid -->
 </section>
 
 <!-- Landscape Video Works Section -->
@@ -436,9 +155,9 @@
         </div>
         
     </div>
-  <!--  <div class="cta-container"> -->
+    <div class="cta-container">
        <!-- <a href="#more-landscape-videos" class="cta-button">See More Landscape Videos</a> -->
- <!--   </div> -->
+    </div>
 </section>
 
 
@@ -459,14 +178,12 @@
             <a href="mailto:golulohani999@gmail.com" class="social-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             </a>
-
         </div>
     </section>
 
-<footer style="background-color: #000; color: #373737; padding: 20px 0; text-align: center; font-size: 14px;">
-  <p>&copy; 2025 Nikhil Lohani. All rights reserved.</p>
-  <p>Designed & Developed by Nikhil Lohani</p>
-</footer> 
+
+
+
 
     <script src="script.js"></script>
 </body>
